@@ -61,11 +61,6 @@ Encodes a string into `Uint8Array` for the given encoding.
 As required by the specification, only encoding to utf-8 is supported. If you want to try it out, you can force a non-standard behavior by passing the `NONSTANDARD_allowLegacyEncoding` option to _TextEncoder_ and a label. For example:
 
 ```js
-const uint8array = new TextEncoder(
-  'windows-1252', { NONSTANDARD_allowLegacyEncoding: true }).encode(text);
-```
-
-```js
 import { TextEncoder } from 'text-decoding'
 
 const uint8array = new TextEncoder(
@@ -74,7 +69,7 @@ const uint8array = new TextEncoder(
 
 console.log(uint8array)
 ```
-```
+```js
 Uint8Array [ 104, 101, 108, 108, 111, 32, 119, 111, 114, 108, 100 ]
 ```
 
@@ -90,13 +85,20 @@ This is [a map of indexes](src/encoding-indexes.js) used for encoding.
 
 Returns the normalised name of the encoding and its associated labels.
 
+<table>
+<tr><th>Source</th><th>Output</th></tr>
+<tr><td>
+
 ```js
 import { getEncoding } from 'text-decoding'
 
 const encoding = getEncoding('ISO-8859-4')
 console.log(encoding)
 ```
-```
+</td>
+<td>
+
+```js
 { labels: 
    [ 'csisolatin4',
      'iso-8859-4',
@@ -109,6 +111,8 @@ console.log(encoding)
      'latin4' ],
   name: 'ISO-8859-4' }
 ```
+</td></tr>
+</table>
 
 <p align="center"><a href="#table-of-contents"><img src="/.documentary/section-breaks/5.svg?sanitize=true"></a></p>
 
