@@ -1,4 +1,4 @@
-<types namespace="_text-decoding">
+<types namespace="_textDecoding">
   <type name="Config" desc="Options for the program.">
     <prop boolean name="shouldRun" default="true">
       A boolean option.

@@ -1,31 +1,10 @@
-import { debuglog } from 'util'
+import TextEncoder from './lib/TextEncoder'
+import TextDecoder from './lib/TextDecoder'
+import EncodingIndexes from './encoding-indexes'
 
-const LOG = debuglog('text-decoding')
+//
+// Implementation of Encoding specification
+// https://encoding.spec.whatwg.org/
+//
 
-/**
- * [fork] Polyfill for the Encoding Living Standard's API Written In ES6 And Optimised With JavaScript Compiler.
- * @param {_text-decoding.Config} [config] Options for the program.
- * @param {boolean} [config.shouldRun=true] A boolean option. Default `true`.
- * @param {string} config.text A text to return.
- */
-export default async function textDecoding(config = {}) {
-  const {
-    shouldRun = true,
-    text,
-  } = config
-  if (!shouldRun) return
-  LOG('text-decoding called with %s', text)
-  return text
-}
-
-/* documentary types/index.xml */
-/**
- * @suppress {nonStandardJsDocs}
- * @typedef {_text-decoding.Config} Config Options for the program.
- */
-/**
- * @suppress {nonStandardJsDocs}
- * @typedef {Object} _text-decoding.Config Options for the program.
- * @prop {boolean} [shouldRun=true] A boolean option. Default `true`.
- * @prop {string} text A text to return.
- */
+export { TextEncoder, TextDecoder, EncodingIndexes }
