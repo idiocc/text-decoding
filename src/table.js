@@ -1,5 +1,4 @@
 import Encodings from './encodings'
-import Indexes from './encoding-indexes'
 import { UTF8Decoder, UTF8Encoder } from './implementations/utf8'
 import { UTF16Decoder, UTF16Encoder } from './implementations/utf16'
 import { GB18030Decoder, GB18030Encoder } from './implementations/gb18030'
@@ -10,6 +9,7 @@ import { ISO2022JPDecoder, ISO2022JPEncoder } from './implementations/iso-2022-j
 import { XUserDefinedDecoder, XUserDefinedEncoder } from './implementations/x-user-defined'
 import { ShiftJISDecoder, ShiftJISEncoder } from './implementations/shift-jis'
 import { SingleByteDecoder, SingleByteEncoder } from './implementations/single-byte'
+import index from './indexes';
 
 // 5.2 Names and labels
 
@@ -108,7 +108,7 @@ Encodings.forEach(({ heading, encodings }) => {
     return
   encodings.forEach((encoding) => {
     const name = encoding.name
-    const idx = Indexes(name.toLowerCase())
+    const idx = index(name.toLowerCase())
     decoders[name] = (options) => {
       return new SingleByteDecoder(idx, options)
     }

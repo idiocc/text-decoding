@@ -1,4 +1,5 @@
 import { inRange } from './utils'
+import Indexes from './encoding-indexes'
 
 //
 // 6. Indexes
@@ -28,19 +29,14 @@ export function indexPointerFor(code_point, i) {
 
 /**
  * @param {string} name Name of the index.
- * @return {(!Array.<number>|!Array.<Array.<number>>)}
- *  */
+ */
 export default function index(name) {
-  if (!('encoding-indexes' in global)) {
-    throw Error("Indexes missing." +
-                " Did you forget to include encoding-indexes.js first?")
-  }
-  return global['encoding-indexes'][name]
+  return Indexes[name]
 }
 
 /**
  * @param {number} pointer The |pointer| to search for in the gb18030 index.
- * @return {?number} The code point corresponding to |pointer| in |index|,
+ * @return The code point corresponding to |pointer| in |index|,
  *     or null if |code point| is not in the gb18030 index.
  */
 export function indexGB18030RangesCodePointFor(pointer) {

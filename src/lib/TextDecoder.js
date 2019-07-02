@@ -1,4 +1,4 @@
-import { Stream, DEFAULT_ENCODING, getEncoding } from './'
+import Stream, { DEFAULT_ENCODING, getEncoding } from './'
 import { end_of_stream, finished, codePointsToString } from '../utils'
 import { decoders } from '../table'
 
@@ -34,7 +34,7 @@ export default class TextDecoder {
     const encoding = getEncoding(label)
 
     // 2. If encoding is failure or replacement, throw a RangeError.
-    if (encoding === null || encoding.name === 'replacement')
+    if (encoding === null || encoding.name == 'replacement')
       throw RangeError('Unknown encoding: ' + label)
     if (!decoders[encoding.name]) {
       throw Error('Decoder not present.' +

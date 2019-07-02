@@ -12,6 +12,7 @@ export class UTF16Decoder {
    */
   constructor(utf16_be, options) {
     const { fatal } = options
+    this.utf16_be = utf16_be
     this.fatal = fatal
     this.utf16_lead_byte = null
     this.utf16_lead_surrogate = null
