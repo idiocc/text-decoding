@@ -1,4 +1,4 @@
 import { getEncoding } from '../src'
 
-const encoding = getEncoding('ISO-8859-4')
+const encoding = getEncoding('ascii')
 console.log(encoding)

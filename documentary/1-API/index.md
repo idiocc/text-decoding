@@ -10,10 +10,20 @@ import { TextEncoder, TextDecoder, EncodingIndexes, getEncoding } from 'text-dec
 
 ## `class TextDecoder`
 
-Decodes a Uint8Array into bytes.
+Decodes a Uint8Array into a string.
+
+<table>
+<tr><th>Source</th><th>Output</th></tr>
+<!-- block-start -->
+<tr><td>
 
 %EXAMPLE: example, ../src => text-decoding%
+</td>
+<td>
+
 %FORK example%
+</td></tr>
+</table>
 
 %~%
 

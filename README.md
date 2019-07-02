@@ -37,20 +37,30 @@ import { TextEncoder, TextDecoder, EncodingIndexes, getEncoding } from 'text-dec
 
 ## `class TextDecoder`
 
-Decodes a Uint8Array into bytes.
+Decodes a Uint8Array into a string.
+
+<table>
+<tr><th>Source</th><th>Output</th></tr>
+<tr><td>
 
 ```js
 import { TextDecoder } from 'text-decoding'
 
 const decoded = new TextDecoder('utf-8')
   .decode(new Uint8Array([
-    0x7A, 0xC2, 0xA2, 0xE6, 0xB0, 0xB4, 0xF0, 0x9D, 0x84, 0x9E, 0xF4, 0x8F, 0xBF, 0xBD,
+    0x7A, 0xC2, 0xA2, 0xE6, 0xB0, 0xB4, 0xF0,
+    0x9D, 0x84, 0x9E, 0xF4, 0x8F, 0xBF, 0xBD,
   ]))
 console.log(decoded)
 ```
+</td>
+<td>
+
 ```
 z¢水𝄞􏿽
 ```
+</td></tr>
+</table>
 
 <p align="center"><a href="#table-of-contents"><img src="/.documentary/section-breaks/2.svg?sanitize=true"></a></p>
 
@@ -92,7 +102,7 @@ Returns the normalised name of the encoding and its associated labels.
 ```js
 import { getEncoding } from 'text-decoding'
 
-const encoding = getEncoding('ISO-8859-4')
+const encoding = getEncoding('ascii')
 console.log(encoding)
 ```
 </td>
@@ -100,16 +110,24 @@ console.log(encoding)
 
 ```js
 { labels: 
-   [ 'csisolatin4',
-     'iso-8859-4',
-     'iso-ir-110',
-     'iso8859-4',
-     'iso88594',
-     'iso_8859-4',
-     'iso_8859-4:1988',
-     'l4',
-     'latin4' ],
-  name: 'ISO-8859-4' }
+   [ 'ansi_x3.4-1968',
+     'ascii',
+     'cp1252',
+     'cp819',
+     'csisolatin1',
+     'ibm819',
+     'iso-8859-1',
+     'iso-ir-100',
+     'iso8859-1',
+     'iso88591',
+     'iso_8859-1',
+     'iso_8859-1:1987',
+     'l1',
+     'latin1',
+     'us-ascii',
+     'windows-1252',
+     'x-cp1252' ],
+  name: 'windows-1252' }
 ```
 </td></tr>
 </table>
