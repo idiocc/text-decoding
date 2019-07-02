@@ -5,19 +5,25 @@ import { TextDecoder, TextEncoder } from '../../src'
 /** @type {Object.<string, (c: Context)>} */
 const T = {
   context: Context,
-  // 'is a function'() {
-  //   equal(typeof textDecoding, 'function')
-  // },
-  // async 'calls package without error'() {
-  //   await textDecoding()
-  // },
-  // async 'gets a link to the fixture'({ fixture }) {
-  //   const text = fixture`text.txt`
-  //   const res = await textDecoding({
-  //     text,
-  //   })
-  //   ok(res, text)
-  // },
+  'x-user-defined encoding'() {
+    equal(new TextEncoder('x-user-defined').encoding, 'utf-8')
+
+    const decoder = new TextDecoder('x-user-defined')
+    for (let i = 0; i < 0x80; ++i) {
+      equal(decoder.decode(new Uint8Array([i])), String.fromCharCode(i))
+      equal(decoder.decode(new Uint8Array([i + 0x80])), String.fromCharCode(i + 0xF780))
+    }
+  },
+  'gb18030 ranges'() {
+    const cases = [
+      { bytes: [148, 57, 218, 51], string: '\uD83D\uDCA9' }, // U+1F4A9 PILE OF POO
+    ]
+
+    cases.forEach((c) => {
+      const res = new TextDecoder('gb18030').decode(new Uint8Array(c.bytes))
+      equal(res,c.string)
+    })
+  },
 }
 
 /** @type {Object.<string, (c: Context)>} */

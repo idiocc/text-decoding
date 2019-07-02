@@ -75,7 +75,7 @@ export const decoders = {
     return new GB18030Decoder(options)
   },
   'gb18030'(options) {
-    return new GB18030Encoder(options)
+    return new GB18030Decoder(options)
   },
   'Big5'(options) {
     return new Big5Decoder(options)
