@@ -18,6 +18,8 @@ yarn add text-decoding
 - [API](#api)
 - [`class TextDecoder`](#class-textdecoder)
 - [`class TextEncoder`](#class-textencoder)
+- [`const EncodingIndexes`](#const-encodingindexes)
+- [`getEncoding(label: string): { name: string, labels: Array<string> }`](#getencodinglabel-string--name-string-labels-arraystring-)
 - [Encodings](#encodings)
 - [Copyright](#copyright)
 
@@ -63,7 +65,53 @@ const uint8array = new TextEncoder(
   'windows-1252', { NONSTANDARD_allowLegacyEncoding: true }).encode(text);
 ```
 
+```js
+import { TextEncoder } from 'text-decoding'
+
+const uint8array = new TextEncoder(
+  'windows-1252', { NONSTANDARD_allowLegacyEncoding: true })
+  .encode('hello world')
+
+console.log(uint8array)
+```
+```
+Uint8Array [ 104, 101, 108, 108, 111, 32, 119, 111, 114, 108, 100 ]
+```
+
 <p align="center"><a href="#table-of-contents"><img src="/.documentary/section-breaks/3.svg?sanitize=true"></a></p>
+
+## `const EncodingIndexes`
+
+This is [a map of indexes](src/encoding-indexes.js) used for encoding.
+
+<p align="center"><a href="#table-of-contents"><img src="/.documentary/section-breaks/4.svg?sanitize=true"></a></p>
+
+## `getEncoding(`<br/>&nbsp;&nbsp;`label: string,`<br/>`): { name: string, labels: Array<string> }`
+
+Returns the normalised name of the encoding and its associated labels.
+
+```js
+import { getEncoding } from 'text-decoding'
+
+const encoding = getEncoding('ISO-8859-4')
+console.log(encoding)
+```
+```
+{ labels: 
+   [ 'csisolatin4',
+     'iso-8859-4',
+     'iso-ir-110',
+     'iso8859-4',
+     'iso88594',
+     'iso_8859-4',
+     'iso_8859-4:1988',
+     'l4',
+     'latin4' ],
+  name: 'ISO-8859-4' }
+```
+
+<p align="center"><a href="#table-of-contents"><img src="/.documentary/section-breaks/5.svg?sanitize=true"></a></p>
+
 
 ## Encodings
 
@@ -73,7 +121,7 @@ utf-8 ibm866 iso-8859-2 iso-8859-3 iso-8859-4 iso-8859-5 iso-8859-6 iso-8859-7 i
 
 (Some encodings may be supported under other names, e.g. ascii, iso-8859-1, etc. See [Encoding](https://encoding.spec.whatwg.org/) for additional labels for each encoding.)
 
-<p align="center"><a href="#table-of-contents"><img src="/.documentary/section-breaks/4.svg?sanitize=true"></a></p>
+<p align="center"><a href="#table-of-contents"><img src="/.documentary/section-breaks/6.svg?sanitize=true"></a></p>
 
 ## Copyright
 

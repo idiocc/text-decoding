@@ -28,7 +28,24 @@ const uint8array = new TextEncoder(
   'windows-1252', { NONSTANDARD_allowLegacyEncoding: true }).encode(text);
 ```
 
-<!-- %EXAMPLE: example, ../src => text-decoding% -->
-<!-- %FORK example% -->
+%EXAMPLE: example/encoder, ../src => text-decoding%
+%FORK example/encoder%
+
+%~%
+
+## `const EncodingIndexes`
+
+This is [a map of indexes](src/encoding-indexes.js) used for encoding.
+
+%~%
+
+```## getEncoding => { name: string, labels: Array<string> }
+[["label", "string"]]
+```
+
+Returns the normalised name of the encoding and its associated labels.
+
+%EXAMPLE: example/get-encoding, ../src => text-decoding%
+%FORK example/get-encoding%
 
 %~%
