@@ -1,25 +1,34 @@
 ## API
 
-The package is available by importing its default function:
+The package is available by importing its named classes and functions:
 
 ```js
-import textDecoding from 'text-decoding'
+import { TextEncoder, TextDecoder, EncodingIndexes, getEncoding } from 'text-decoding'
 ```
 
 %~%
 
-```## textDecoding
-[
-  ["arg1", "string"],
-  ["arg2?", "boolean"]
-]
-```
+## `class TextDecoder`
 
-Call this function to get the result you want.
-
-%TYPEDEF types/index.xml%
+Decodes a Uint8Array into bytes.
 
 %EXAMPLE: example, ../src => text-decoding%
 %FORK example%
+
+%~%
+
+## `class TextEncoder`
+
+Encodes a string into `Uint8Array` for the given encoding.
+
+As required by the specification, only encoding to utf-8 is supported. If you want to try it out, you can force a non-standard behavior by passing the `NONSTANDARD_allowLegacyEncoding` option to _TextEncoder_ and a label. For example:
+
+```js
+const uint8array = new TextEncoder(
+  'windows-1252', { NONSTANDARD_allowLegacyEncoding: true }).encode(text);
+```
+
+<!-- %EXAMPLE: example, ../src => text-decoding% -->
+<!-- %FORK example% -->
 
 %~%

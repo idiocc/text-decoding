@@ -70,8 +70,8 @@ export const DEFAULT_ENCODING = 'utf-8'
 
 
 /**
+ * Returns the encoding for the label.
  * @param {string} label The encoding label.
- * @return {?{name:string,labels:Array.<string>}}
  */
 export function getEncoding(label) {
   // 1. Remove any leading and trailing ASCII whitespace from label.
