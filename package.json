@@ -1,6 +1,6 @@
 {
   "name": "text-decoding",
-  "version": "0.0.0-pre",
+  "version": "1.0.0",
   "description": "[fork] TextEncoder and TextDecoder (Polyfill for the Encoding Living Standard's API) For Node.JS.",
   "main": "build/index.js",
   "module": "src/index.js",
