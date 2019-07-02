@@ -1,7 +1,7 @@
 {
   "name": "text-decoding",
   "version": "0.0.0-pre",
-  "description": "[fork] Polyfill for the Encoding Living Standard's API Written In ES6 And Optimised With JavaScript Compiler.",
+  "description": "[fork] TextEncoder and TextDecoder (Polyfill for the Encoding Living Standard's API) For Node.JS.",
   "main": "build/index.js",
   "module": "src/index.js",
   "scripts": {
@@ -30,7 +30,25 @@
     "url": "git://github.com/idiocc/text-decoding.git"
   },
   "keywords": [
-    "text-decoding"
+    "text-encoding",
+    "encoding",
+    "text-decoding",
+    "TextEncoder",
+    "TextDecoder",
+    "decoding",
+    "ascii",
+    "windows-1252",
+    "big5",
+    "euc-jp",
+    "euc-kr",
+    "gb18030",
+    "iso-20220jp",
+    "shift-jis",
+    "single-byte",
+    "utf8",
+    "utf16",
+    "x-user-defined",
+    "unicode"
   ],
   "author": "Anton <anton@adc.sh>",
   "license": "MIT",
