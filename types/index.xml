@@ -1,0 +1,10 @@
+<types namespace="_text-decoding">
+  <type name="Config" desc="Options for the program.">
+    <prop boolean name="shouldRun" default="true">
+      A boolean option.
+    </prop>
+    <prop string name="text">
+      A text to return.
+    </prop>
+  </type>
+</types>
